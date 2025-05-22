@@ -29,7 +29,7 @@ It also has a debug mode for direct servo testing.
    - Press **Button 3** (Reset) to stop and reset the timer.
 
 4. **When Time is Up**  
-   - The servo will run (e.g., to release or wind something).
+   - The servo will run (e.g., to wind something).
    - After the action, the device shows a menu for further options.
 
 5. **Post-Timer Options**
@@ -41,13 +41,13 @@ It also has a debug mode for direct servo testing.
 ## **Debug Mode (Servo Test Mode)**
 
 **To Enter Debug Mode:**  
-- Hold **Button 3** for 3 seconds while in normal mode.
+- Hold **Button 4** for 3 seconds while in normal mode.
 
 **Debug Controls:**  
-- **Button 0**: Servo spins full speed in reverse
-- **Button 1**: Servo spins full speed forward
-- **Button 2**: Servo stops spinning
-- **Button 3**: Exit debug mode and return to timer
+- **Button 1**: Servo spins full speed in reverse
+- **Button 2**: Servo spins full speed forward
+- **Button 3**: Servo stops spinning
+- **Button 4**: Exit debug mode and return to timer
 
 *Use debug mode to check servo direction, speed, and connections.*
 
@@ -83,7 +83,7 @@ It also has a debug mode for direct servo testing.
 ## **Wiring & Power Tips**
 
 - **Servo Pin**: Connect signal wire to pin 7.
-- **Power**: Use a separate power source for the servo (not the Arduino 5V pin) for best results.
+- **Power**: Use a circuit board and pull he 5 volt to the board connecting it to both the lcd and servo same with ground-
 - **Buttons**: Connect as per your Olimex16x2 LCD shield or your custom wiring.
 
 ---
@@ -103,4 +103,4 @@ It also has a debug mode for direct servo testing.
 
 ---
 
-Enjoy your project!
+
