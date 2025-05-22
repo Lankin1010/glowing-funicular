@@ -83,8 +83,8 @@ It also has a debug mode for direct servo testing.
 ## **Wiring & Power Tips**
 
 - **Servo Pin**: Connect signal wire to pin 7.
-- **Power**: Use a circuit board and pull he 5 volt to the board connecting it to both the lcd and servo same with ground-
-- **Buttons**: Connect as per your Olimex16x2 LCD shield or your custom wiring.
+- **Power**: Use a bread/circuit board and pull the 5 volt to the board connecting it to both the lcd and servo same with ground.
+- **Buttons**: Connect your Olimex16x2 LCD shield to thr ardionu through a breadboard or circuit board.
 
 ---
 
