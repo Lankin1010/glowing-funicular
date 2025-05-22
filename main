@@ -2,9 +2,9 @@
 #include "Olimex16x2.h"
 #include <Servo.h>
 #include <Arduino.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <malloc.h>
+// #include <stdlib.h> // Not needed unless you use malloc/free
+// #include <stdio.h>  // Not needed unless you use printf/sprintf
+// #include <malloc.h> // Not needed unless you specifically use mallinfo
 
 Olimex16x2 lcd(&Wire);
 Servo myServo;
@@ -50,9 +50,20 @@ unsigned long lastSerialPrint = 0;
 char serialBuffer[SERIAL_BUF_SIZE];
 byte serialIndex = 0;
 
+/*
+ * freeMemory is platform-specific—remove or replace with a simpler implementation
+ * if mallinfo() is not available on your Arduino platform.
+ */
 int freeMemory() {
-  struct mallinfo mi = mallinfo();
-  return mi.fordblks;
+  #if defined(__arm__) && defined(__SAM3X8E__)
+    struct mallinfo mi = mallinfo();
+    return mi.fordblks;
+  #else
+    // On AVR, use stack-pointer arithmetic or a library for free memory.
+    extern int __heap_start, *__brkval; 
+    int v; 
+    return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval); 
+  #endif
 }
 
 void setup() {
@@ -161,6 +172,9 @@ void loop() {
       if (totalSeconds > 0) {
         totalSeconds--;
         updateCountdownDisplay();
+        // Serial debug for timer tick:
+        Serial.print(F("Tick: "));
+        Serial.println(totalSeconds);
       } else {
         timerStarted = false;
         isRewinding = true;
@@ -327,6 +341,9 @@ void handleDebugMode(bool btn0, bool btn1, bool btn2, bool btn3) {
   }
 }
 
+/*
+ * Improved serial input handler with buffer overflow protection.
+ */
 void handleSerialInput() {
   while (Serial.available()) {
     char c = Serial.read();
@@ -338,6 +355,10 @@ void handleSerialInput() {
       }
     } else if (serialIndex < SERIAL_BUF_SIZE - 1) {
       serialBuffer[serialIndex++] = c;
+    } else {
+      // Buffer overflow, reset and warn
+      serialIndex = 0;
+      Serial.println(F("Serial buffer overflow! Command too long."));
     }
   }
 }
