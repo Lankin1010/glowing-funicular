@@ -1,4 +1,4 @@
-# Timer + Servo Control Device – Quick Start Guide
+# Timer + Servo Control Device
 
 ## Overview
 This device lets you set a timer and control a 360° servo motor.  
