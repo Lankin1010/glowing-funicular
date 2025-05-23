@@ -10,7 +10,7 @@ It also has a debug mode for direct servo testing.
 
 - **Button 0**: Add 30 minutes to the timer
 - **Button 1**: Add 1 hour to the timer
-- **Button 2**: Start the timer (when time > 0)
+- **Button 2**: Start the timer (when time is more than 0)
 - **Button 3**: Reset timer (hold for 3 seconds to enter debug mode)
 
 ---
@@ -18,23 +18,22 @@ It also has a debug mode for direct servo testing.
 ## **How to Use**
 
 1. **Setting the Timer**  
-   - Press **Button 0** or **Button 1** to add time.
-   - The LCD shows the total time set.
+   - Press **Button 1** or **Button 2** to add time.
 
 2. **Starting the Timer**  
-   - Press **Button 2** (Start) to begin countdown.
+   - Press **Button 3** (Start) to begin countdown.
 
 3. **During Countdown**  
    - The LCD shows the remaining time.
-   - Press **Button 3** (Reset) to stop and reset the timer.
+   - Press **Button 4** (Reset) to stop and reset the timer.
 
 4. **When Time is Up**  
    - The servo will run (e.g., to wind something).
    - After the action, the device shows a menu for further options.
 
 5. **Post-Timer Options**
-   - **Button 2**: Run the servo again (rewind)
-   - **Button 3**: Reset the device
+   - **Button 3**: Run the servo again (rewind)
+   - **Button 4**: Reset the device
 
 ---
 
@@ -98,7 +97,7 @@ It also has a debug mode for direct servo testing.
 
 ## **About the Device**
 
-- Designed for general-purpose timed mechanical actuation (e.g., turning, releasing, or winding something after a set time).
+- Designed for general-purpose timed device (e.g., winding something after a set time).
 - Easy debug mode for quick servo direction/speed tests.
 
 ---
