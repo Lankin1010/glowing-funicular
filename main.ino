@@ -3,18 +3,6 @@
 #include <Servo.h>
 #include <Arduino.h>
 
-/*
-   _____       _                    _      _            
-  |  __ \     | |                  | |    | |           
-  | |  | | ___| |_ __   ___ _ __   | | ___| |_ ___  ___ 
-  | |  | |/ _ \ | '_ \ / _ \ '__|  | |/ _ \ __/ _ \/ __|
-  | |__| |  __/ | |_) |  __/ |     | |  __/ ||  __/\__ \
-  |_____/ \___|_| .__/ \___|_|     |_|\___|\__\___||___/
-                | |                                     
-                |_|                                     
-  Fun Timer Project - 2025 - github.com/Lankin1010/glowing-funicular
-*/
-
 Olimex16x2 lcd(&Wire);
 Servo myServo;
 
